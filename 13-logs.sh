@@ -26,7 +26,7 @@ VALIDATE()
     fi # End of If
 }
 
-echo "Script stat=rted executing at $TIMIESTAMP" &>>$LOG_FILE
+echo "Script stat=rted executing at $TIMIESTAMP" &>>$LOG_FILE_NAME
 
 
 if [ $USERID -eq 0 ] # If result other than zero then show that this account is not authotized..! message as follows  
@@ -34,10 +34,10 @@ then
    
     ############## To Install MYSQL into the linux server ##############
 
-    dnf list installed mysql &>>$LOG_FILE
+    dnf list installed mysql &>>$LOG_FILE_NAME
     if [ $? -ne 0 ]
     then 
-       dnf install mysql -y &>>$LOG_FILE
+       dnf install mysql -y &>>$LOG_FILE_NAME
        VALIDATE $? "Mysql"
 
     else
@@ -46,10 +46,10 @@ then
 
    ############## To Install GIT into the linux server ##############
 
-   dnf list installed git  &>>$LOG_FILE
+   dnf list installed git  &>>$LOG_FILE_NAME
     if [ $? -ne 0 ]
     then 
-       dnf install git -y &>>$LOG_FILE
+       dnf install git -y &>>$LOG_FILE_NAME
        VALIDATE $? "Git"
     else
       echo -e "GIT Is already $Y Installed In your System.."

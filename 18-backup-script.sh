@@ -55,6 +55,8 @@ then
   
 fi
 
+FILES=${find $SOURCE_DIR -name "*.log" <$DAYS>}
+echo "Files are $FILES"
 
 
 

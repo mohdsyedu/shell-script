@@ -43,6 +43,7 @@ if [ ! -d $SOURCE_DIR ]
 then
   
   echo -e "$SOURCE_DIR Doest not exist please check..."
+  exit 1
   
 fi
 
@@ -50,6 +51,7 @@ if [ ! -d $DEST_DIR ]
 then
   
   echo -e "$DEST_DIR Doest not exist please check..."
+  exit
   
 fi
 
